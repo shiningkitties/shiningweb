@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Shine" />
+    <meta
+      name="description"
+      content="Shine's little paradise!" />
+  <link rel="icon" type="image/x-icon" href="images/yuumi.ico">
+    <link href="/pages/home/css/style.css" rel="stylesheet" />
+    <link href="/pages/home/css/home.css" rel="stylesheet" />
+    <link href="/pages/home/css/musicplayer.css" rel="stylesheet" />
+   <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
+    <title>Shine's home -w-</title>
+  </head>
+
+</style>
+<link rel="icon" type="image/x-icon" href="images/yuumi.ico">
+
+  <script data-goatcounter="https://shine.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+  
+  <style>
+    html {
+  
+        cursor: url("images/cursor1.png"), auto;
+        
+    }
+    a {
+    cursor: url("/images/cursor1.png"), pointer;
+}
+#left {
+    text-align:center;
+    float:left;
+    margin-top:5%;
+    margin-left:15%;
+}
+
+#right{
+    text-align:center;
+    float:right;
+    margin-top:20%;
+    margin-right:15%;
+}
+
+#center{
+    text-align:center;
+    display:inline-flex;
+    flex-direction:column;
+    margin-top:20%;
+    margin-left:15%;
+}
+
+#center p{
+        border: azure 10px groove;
+        margin-left:10%;
+        text-align:center;
+        font-size:22px;
+        padding: 15px;
+        width: 50px;
+        height: 30px;
+        background-color:black;
+    }
+
+</style>
+  <body onload="startTime()">
+    <!-- the onload thing is for the clock -->
+    <div class="grid-cont">
+      <!-- banner -->
+      <div class="grid-sec" id="g1">
+        <header>
+          <img
+            src="/pages/home/images/uvstbanner.png"
+            alt="yuumi banner"
+            title="nwn" />
+        </header>
+      </div>
+
+      <!-- quote/blurb thing -->
+      <div class="grid-sec" id="g2">
+        <marquee
+          >i'm gonna be forever, no matter what happens, i love you.</marquee
+        >
+      </div>
+
+      <!-- music player -->
+      <div class="grid-sec" id="g3">
+        <div id="musicplayer">
+          <div>
+            <marquee scrollamount="8" class="songtitle"></marquee>
+          </div>
+
+          <table class="controls">
+            <tr>
+              <td>
+                <div class="prev-track" onclick="prevTrack()">
+                  <i class="fas fa-backward"></i>
+                </div>
+              </td>
+              <td>
+                <div class="playpause-track" onclick="playpauseTrack()">
+                  <i class="fas fa-play"></i>
+                </div>
+              </td>
+              <td>
+                <div class="next-track" onclick="nextTrack()">
+                  <i class="fas fa-forward"></i>
+                </div>
+              </td>
+            </tr>
+          </table>
+
+ <div class="seeking">
+  <div class="current-time">00:00</div>
+
+  <input
+    type="range"
+    min="1"
+    max="100"
+    value="0"
+    class="seek_slider"
+    onchange="seekTo()" />
+
+  <div class="total-duration">0:00</div>
+</div>
+
+
+<audio id="music" src=""></audio>
+        </div>
+        <img
+          src="/pages/home/images/saltito.png"
+          width="250px"
+          id="pointcake"
+          title="wow, a music player! i wonder what songs shine added..."
+          alt="meow meow music!" />
+      </div>
+
+      <!-- welcome message -->
+      <div class="grid-sec" id="g4">
+        <main>
+          <h1>welcome</h1>
+          <p>
+            welcome to the shine's website main page, the home of my existence,
+            <u>my own website!!!!</u> i always wanted to have a website like this
+            with such a cool domain mweheheh x3
+          
+          </p>
+          <p>
+            i'm a
+            <a href="https://op.gg/es/lol/summoners/euw/princess%20shine-meow">plat 4 yuumi main</a> who spent like 480 hours in this shitty game called league of legends, also i have a lot of games on <a href="https://steamcommunity.com/id/shiningkitties/">steam</a> to
+            play more than <b><i>300 games</i></b> collected in
+            <u>5 years</u>
+          </p>
+          <p>
+            <b><i>note:</i></b> this website its in a very early stage of construction, i will update it every day or every few days!!
+          </p>
+        </main>
+      </div>
+
+      <!-- clock -->
+      <div class="grid-sec" id="g5">
+        <h1><div id="clock"></div></h1>
+      </div>
+
+      <!-- calendar -->
+      <div class="grid-sec" id="g6">
+        <script src="/pages/home/js/calendar.js"></script>
+      </div>
+
+   <!-- navlinks -->
+      <div class="grid-sec" id="g7">
+        <nav>
+          <h1>navigation</h1>
+          <h2>personal</h2>
+          <ul>
+            <li><a href="/pages/about.html">about</a></li>
+        </nav>
+      </div>
+
+      <!-- updates -->
+      <div class="grid-sec" id="g8">
+        <h1>updates</h1>
+        <p>
+          
+          1-3-26: created this :3
+          
+      </div>
+
+      <!-- to-do list -->
+      <div class="grid-sec" id="g9">
+        <h1>to-do</h1>
+        <ul>
+          <li><b>more page sections</b></li>
+          <li>that section at the right</li>
+          <li>reach emerald in league (not the page x3)</li>
+          <li>make a blog</li>
+          <li>languages page</li>
+          <li>put fun links</li>
+        </ul>
+      </div>
+
+      <!-- featured something -->
+      <div class="grid-sec" id="g10">
+        <img
+          src="/pages/home/images/enamorada.png"
+          width="250px"
+          alt="yuumi love this page" />
+      </div>
+
+      <!-- song/album of the moment -->
+      <div class="grid-sec" id="g11">
+        <h1>featured song</h1>
+        <img
+          src="/pages/home/images/saturno.jpg"
+          width="300px"
+          alt="2023 BEST ALBUM" />
+        <h2> <a href="https://open.spotify.com/track/1ImWmtI7DM2uFPNJHHbD8g?si=0b37a40f5f4f409c">DIME QUIEN????</a></h2>
+        <p> <a href="https://open.spotify.com/artist/1mcTU81TzQhprhouKaTkpq?si=u0Xm58ECTx2alOYZCcKU1w">Rauw Alejandro</a></p>
+        <marquee>DIMEE QUIEEEEEEEEEEEEEEEEEEEEN</marquee>
+        <p>
+          <b>on repeat because:</b> i love rauw alejandro so much!! :3
+        </p>
+      </div>
+
+ <!-- poll yuumi -->
+<div class="grid-sec" id="g12">
+  <h1>poll</h1>
+  <form method="post" action="https://poll.pollcode.com/43686919">
+    <div
+      style="
+        background-color: #171717;
+        padding: 2px;
+        width: 210px;
+        font-family: Arial;
+        font-size: medium;
+        color: #d6cef6;
+      "
+    >
+      <div style="padding: 2px 0px 4px 2px">
+        <strong>do you love yuumi? uwu</strong>
+      </div>
+
+      <input type="radio" name="answer" value="1" id="answer436869191" style="float: left" />
+      <label for="answer436869191" style="float: left; width: 179px">yes!!!!</label>
+      <div style="clear: both; height: 2px"></div>
+
+      <input type="radio" name="answer" value="2" id="answer436869192" style="float: left" />
+      <label for="answer436869192" style="float: left; width: 179px">ofc i love it!!!</label>
+      <div style="clear: both; height: 2px"></div>
+
+      <input type="radio" name="answer" value="3" id="answer436869193" style="float: left" />
+      <label for="answer436869193" style="float: left; width: 179px">best champion!!!</label>
+      <div style="clear: both; height: 2px"></div>
+
+      <input type="radio" name="answer" value="4" id="answer436869194" style="float: left" />
+      <label for="answer436869194" style="float: left; width: 179px">i like it</label>
+      <div style="clear: both; height: 2px"></div>
+
+      <input type="radio" name="answer" value="5" id="answer436869195" style="float: left" />
+      <label for="answer436869195" style="float: left; width: 179px">she's my goddess</label>
+      <div style="clear: both; height: 2px"></div>
+
+      <input type="radio" name="answer" value="6" id="answer436869196" style="float: left" />
+      <label for="answer436869196" style="float: left; width: 179px">meow meow meow (yes)</label>
+      <div style="clear: both; height: 2px"></div>
+
+      <div align="center" style="padding: 3px">
+        <input type="submit" value=" Vote " />&nbsp;
+        <input type="submit" name="view" value=" View " />
+      </div>
+
+      <div align="right" style="font-size: 10px">
+        pollcode.com <a href="https://pollcode.com/">free polls</a>
+      </div>
+    </div>
+  </form>
+</div>
+
+      <!-- site stats -->
+      <div class="grid-sec" id="g13">
+        <h1>stats</h1>
+        <p>
+          you are visitor number...
+          <br />
+          <!-- FC2 Counter  Starts here -->
+          <script
+            language="javascript"
+            type="text/javascript"
+            src="//counter1.fc2.com/counter.php?id=39812842&main=1"></script>
+          <noscript
+            ><img src="//counter1.fc2.com/counter_img.php?id=39812842&main=1"
+          /></noscript>
+          <!-- FC2 Counter  Ends here -->
+        </p>
+        <p>
+          currently online:
+          <br />
+          <!-- FC2 Counter  Starts here -->
+          <script
+            language="javascript"
+            type="text/javascript"
+            src="//counter1.fc2.com/views.php?id=39812842&main=1"></script>
+          <noscript
+            ><img src="//counter1.fc2.com/counter_now.php?id=39812842&main=1"
+          /></noscript>
+          <!-- FC2 Counter  Ends here -->
+        </p>
+      </div>
+
+      <!-- link buttons -->
+      <div class="grid-sec" id="g14">
+        <h1>meow meow</h1>
+        <img
+          src="/pages/home/images/hello-kitty.gif"
+          width="88"
+          alt="jeloukiti"
+          tabindex="0" />
+      </div>
+
+      <!-- footer -->
+      <footer class="grid-sec" id="g15">
+        <p>
+          coded with &#10084; by <u>shine</u> <br />
+          est. 2026 - <i>forever</i>
+          <br />
+          <a href="https://open.spotify.com/user/c2irn2fabgmx92mk4xb0t48b1?si=18a1040f1667416e">spotify</a>
+          |
+          <a href="https://steamcommunity.com/id/shiningkitties//">steam</a>
+          |
+          <a href="/index.html">main page</a>
+          |
+          <a href="https://www.twitch.tv/shiningkitties">twitch</a>
+          |
+          <a href="https://www.instagram.com/">instagram</a>
+          <br />
+          princess shine#meow 
+          <a href="https://op.gg/es/lol/summoners/euw/princess%20shine-meow">league of legends user</a>
+        </p>
+      </footer>
+    </div>
+          <script src="/oneko.js"></script>
+  </body>
+  <!-- scripts  -->
+
+  <!-- clock -->
+  <script src="/pages/home/js/clock.js"></script>
+
+  <!-- music player -->
+  <script src="/pages/home/js/musicplayer.js"></script>
+
+  <!--TOOLTIP STYLING-->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+  <script src="/pages/home/js/tooltips.js"></script>
+
+  <script>
+    (function ($) {
+      $(document).ready(function () {
+        $("[title]").style_my_tooltips();
+      });
+    })(jQuery);
+  </script>
+</html>
